@@ -159,7 +159,7 @@ void	PhoneBook::printPhoneBook()
 		if (nickName.length() > 10)
 			nickName.replace(9, nickName.length() - 9, ".");
 		std::cout << std::setw(10) << i + 1 << "|"<< std::setw(10) 
-		<< firstName << "|"<< std::setw(10) << lastName << "|" << std::setw(10) 
+		<< firstName << "|" << std::setw(10) << lastName << "|" << std::setw(10) 
 		<< nickName << std::endl;
 	}
 	std::cout << std::string(43, '-') << std::endl;
