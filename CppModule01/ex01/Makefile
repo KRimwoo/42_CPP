@@ -4,7 +4,7 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 SRCS = Zombie.cpp ZombieHorde.cpp main.cpp
 OBJS = $(SRCS:.cpp=.o)
 
-NAME = zombie
+NAME = ex01
 
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@

@@ -1,10 +1,10 @@
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = Zombie.cpp newZombie.cpp randomChump.cpp main.cpp
+SRCS =  Weapon.cpp HumanA.cpp HumanB.cpp main.cpp
 OBJS = $(SRCS:.cpp=.o)
 
-NAME = ex00
+NAME = ex03
 
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
