@@ -2,8 +2,8 @@
 
 int main(void)
 {
-	Zombie	zombie1("Zombie1");
-	Zombie	*zombie2 = newZombie("Zombie2");
+	Zombie	zombie1("Zombie1 in stack");
+	Zombie	*zombie2 = newZombie("Zombie2 in heap");
 
 	randomChump("Zombie3");
 	randomChump("Zombie4");
