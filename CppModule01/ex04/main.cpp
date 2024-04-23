@@ -56,4 +56,5 @@ int	main(int ac, char*av[]) {
 	ifs.close();
 	ofs.close();
 
+	return (0);
 }

@@ -14,5 +14,6 @@ int main() {
 	std::cout << "String: " << str << std::endl;
 	std::cout << "String pointer: " << *strPtr << std::endl;
 	std::cout << "String reference: " << strRef << std::endl;
-
+	
+	return (0);
 }
