@@ -5,7 +5,7 @@ Fixed::Fixed() {
 }
 
 Fixed::Fixed(const Fixed &fixed) {
-	this->value = fixed.getRawBits();
+    *this = fixed;
 }
 
 Fixed::Fixed(const int value) {
@@ -87,7 +87,7 @@ Fixed &Fixed::operator++(void) {
 }
 
 const Fixed Fixed::operator++(int) {
-    const Fixed tmp(*this);
+    const Fixed tmp(*this);        
     this->value++;
     return (tmp);
 }
