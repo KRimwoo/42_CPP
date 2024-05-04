@@ -6,7 +6,7 @@ int main(void)
     ClapTrap b("B");
 
     a.attack("B");
-    b.takeDamage(3);
+    b.takeDamage(20);
     std::cout << "a's hit points: " << a.getHitPoints() << std::endl;
     std::cout << "a's energy points: " << a.getEnergyPoints() << std::endl;
     std::cout << "a's attack damage: " << a.getAttackDamage() << std::endl;
@@ -20,9 +20,8 @@ int main(void)
     std::cout << "c's energy points: " << c.getEnergyPoints() << std::endl;
     std::cout << "c's attack damage: " << c.getAttackDamage() << std::endl;
     c.attack("B");
-    b.takeDamage(5);
+    b.takeDamage(20);
     b.attack("A");
-    c.takeDamage(10);
     std::cout << "c's hit points: " << c.getHitPoints() << std::endl;
     std::cout << "c's energy points: " << c.getEnergyPoints() << std::endl;
     std::cout << "c's attack damage: " << c.getAttackDamage() << std::endl;
@@ -31,9 +30,10 @@ int main(void)
     std::cout << "b's attack damage: " << b.getAttackDamage() << std::endl;
 
     c.guardGate();
-    
-    std::cout << "-------------------" << std::endl;
-    ScavTrap *d = new ScavTrap();
+
+    std::cout << "----------------------------" << std::endl;
+    ClapTrap *d = new ScavTrap();
+    d->attack("A");
     delete d;
-    std::cout << "-------------------" << std::endl;
+    std::cout << "----------------------------" << std::endl;
 }
