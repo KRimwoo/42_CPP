@@ -16,11 +16,18 @@ int main(void)
     std::cout << "b's hit points: " << b.getHitPoints() << std::endl;
     std::cout << "b's energy points: " << b.getEnergyPoints() << std::endl;
     std::cout << "b's attack damage: " << b.getAttackDamage() << std::endl;
+    
     b.beRepaired(2);
-    c.attack("A");
-    a.takeDamage(5);
-    a.beRepaired(2);
+    b.attack("C");
+    c.takeDamage(20);
+    c.attack("B");
+    b.takeDamage(30);
+    std::cout << "c's hit points: " << c.getHitPoints() << std::endl;
+    std::cout << "c's energy points: " << c.getEnergyPoints() << std::endl;
+    std::cout << "c's attack damage: " << c.getAttackDamage() << std::endl;
+    std::cout << "b's hit points: " << b.getHitPoints() << std::endl;
+    std::cout << "b's energy points: " << b.getEnergyPoints() << std::endl;
+    std::cout << "b's attack damage: " << b.getAttackDamage() << std::endl;
     b.guardGate();
-    d.attack("C");
     c.highFivesGuys();
 }
