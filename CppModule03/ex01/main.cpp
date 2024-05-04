@@ -31,6 +31,7 @@ int main(void)
     std::cout << "b's attack damage: " << b.getAttackDamage() << std::endl;
 
     c.guardGate();
+    
     std::cout << "-------------------" << std::endl;
     ScavTrap *d = new ScavTrap();
     delete d;
