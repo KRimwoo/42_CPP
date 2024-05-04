@@ -1,6 +1,6 @@
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap() : ClapTrap()
+FragTrap::FragTrap()
 {
     std::cout << "FragTrap default constructor called" << std::endl;
     this->name = "default";
@@ -9,7 +9,7 @@ FragTrap::FragTrap() : ClapTrap()
     this->attackDamage = 30;
 }
 
-FragTrap::FragTrap(std::string name) : ClapTrap(name)
+FragTrap::FragTrap(std::string name)
 {
     std::cout << "FragTrap parameter constructor called" << std::endl;
     this->name = name;
