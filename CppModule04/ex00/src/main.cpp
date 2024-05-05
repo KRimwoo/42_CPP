@@ -1,9 +1,9 @@
-#include "Animal.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
-#include "WrongDog.hpp"
+#include "../includes/Animal.hpp"
+#include "../includes/Cat.hpp"
+#include "../includes/Dog.hpp"
+#include "../includes/WrongAnimal.hpp"
+#include "../includes/WrongCat.hpp"
+#include "../includes/WrongDog.hpp"
 
 int main()
 {
@@ -32,4 +32,8 @@ int main()
     delete meta;
     delete j;
     delete i;
+
+    delete wrongMeta;
+    delete wrongJ;
+    delete wrongI;
 }
