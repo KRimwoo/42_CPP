@@ -3,15 +3,21 @@
 Brain::Brain()
 {
     std::cout << "Brain default constructor called" << std::endl;
-    for (int i = 0; i < 100; i++)
-        this->ideas[i] = "idea" + std::to_string(i);
+    for (int i = 0; i < 100; i++) {
+        std::stringstream ss;
+        ss << "idea" << i;
+        this->ideas[i] = ss.str();
+    }
 }
 
 Brain::Brain(std::string idea)
 {
     std::cout << "Brain parameter constructor called" << std::endl;
-    for (int i = 0; i < 100; i++)
-        this->ideas[i] = idea + std::to_string(i);
+    for (int i = 0; i < 100; i++) {
+        std::stringstream ss;
+        ss << idea << i;
+        this->ideas[i] = idea + ss.str();
+    }
 }
 
 Brain::Brain(const Brain &brain)
