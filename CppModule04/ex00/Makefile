@@ -9,7 +9,7 @@ SRCS = $(SRCDIR)/Animal.cpp $(SRCDIR)/Cat.cpp $(SRCDIR)/Dog.cpp \
 	$(SRCDIR)/WrongDog.cpp $(SRCDIR)/main.cpp
 OBJS = $(SRCS:.cpp=.o)
 
-NAME = Polymorphism
+NAME = ex00
 
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -I$(INCDIR) -c $< -o $@

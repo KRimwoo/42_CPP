@@ -42,6 +42,8 @@ int main()
         wrongAnimals[i]->makeSound();
         delete wrongAnimals[i];
     }
+    WrongCat wrongCat;
+    wrongCat.makeSound();
 
     std::cout << std::endl << \
         "=============Dog copy tests=============" << std::endl << std::endl;
