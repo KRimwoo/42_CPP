@@ -16,7 +16,7 @@ Brain::Brain(std::string idea)
     for (int i = 0; i < 100; i++) {
         std::stringstream ss;
         ss << idea << i;
-        this->ideas[i] = idea + ss.str();
+        this->ideas[i] = ss.str();
     }
 }
 
