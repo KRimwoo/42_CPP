@@ -8,9 +8,9 @@ Form::Form() : _name("default"), _isSigned(false), _signGrade(150), _execGrade(1
 Form::Form(std::string name, int signGrade, int execGrade): _name(name), _isSigned(false), _signGrade(signGrade), _execGrade(execGrade)
 {
 	if (signGrade < 1 || execGrade < 1)
-        throw GradeTooHighException();
-    else if (signGrade > 150 || execGrade > 150)
-        throw GradeTooLowException();
+		throw GradeTooHighException();
+	else if (signGrade > 150 || execGrade > 150)
+		throw GradeTooLowException();
 	std::cout << this->_name << " : form constructor called.\n";
 }
 
