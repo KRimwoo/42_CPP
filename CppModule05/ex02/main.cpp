@@ -12,8 +12,8 @@ int main()
         Bureaucrat bureaucratC("BureaucratC", 1);
         
         ShrubberyCreationForm shrubbery("home");
-        RobotomyRequestForm robotomy("road");
-        PresidentialPardonForm presidential("president");
+        RobotomyRequestForm robotomy("woorikim");
+        PresidentialPardonForm presidential("robotomized_woorikim");
 
         std::cout << "=====BureaucratA working=====\n";
         try {

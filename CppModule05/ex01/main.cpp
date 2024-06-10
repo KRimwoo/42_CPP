@@ -28,6 +28,8 @@ int main()
         Form formC("FormC", 120, 100);
 
         std::cout << bureaucratB;
+
+        std::cout << "=====Before signing FormC=====\n";
         std::cout << formC;
 
         bureaucratB.signForm(formC);

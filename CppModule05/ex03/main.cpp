@@ -26,7 +26,7 @@ int main()
 
     try {
         std::cout << "\n=====Robotomy Form Creation=====\n";
-        AForm *rrf = intern.makeForm("robotomy request", "road");
+        AForm *rrf = intern.makeForm("robotomy request", "woorikim");
 
         if (rrf) {
             std::cout << *rrf;
@@ -39,7 +39,7 @@ int main()
 
     try {
         std::cout << "\n=====Presidential Form Creation=====\n";
-        AForm *ppf = intern.makeForm("presidential pardon", "president");
+        AForm *ppf = intern.makeForm("presidential pardon", "woorikim");
 
         if (ppf) {
             std::cout << *ppf;
