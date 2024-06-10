@@ -3,25 +3,31 @@
 
 int main()
 {
-	Bureaucrat bureaucratA("bureaucratA", 1);
-	Bureaucrat bureaucratB("bureaucratB", 150);
-	Form form("form", false, 70, 150);
+	try {
+        Bureaucrat bureaucratA("BureaucratA", 44);
+        Form formA("FormA", 45, 40);
+		Form formB("FormB", 160, 120);
 
-	try
-	{
-		std::cout << bureaucratA;
-		std::cout << bureaucratB;
-		std::cout << form;
-		bureaucratA.signForm(form);
-		std::cout << form;
-		bureaucratB.signForm(form);
-		std::cout << form;
-		bureaucratA.signForm(form);
-		std::cout << form;
+        std::cout << bureaucratA;
+        std::cout << formA;
+
+        bureaucratA.signForm(formA);
+        std::cout << formA << std::endl;
+
+    }
+    catch (const std::exception& e) {
+        std::cerr << "Exception: " << e.what() << std::endl;
+    }
+
+	try {
+        Bureaucrat bureaucratB("BureaucratB", 121);
+        Form formC("FormC", 120, 100);
+        bureaucratB.signForm(formC);
+		bureaucratB.increaseGrade();
+		bureaucratB.signForm(formC);
 	}
-	catch (std::exception &e)
-	{
-		std::cerr << e.what();
-	}
+	catch (const std::exception& e) {
+        std::cerr << "Exception: " << e.what() << std::endl;
+    }
 	return 0;
 }

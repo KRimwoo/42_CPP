@@ -14,9 +14,9 @@ class Form
 		int const _execGrade;
 	public:
 		Form();
-		Form(std::string name, bool isSigned, int signGrade, int execGrade);
+		Form(std::string name, int signGrade, int execGrade);
 		Form(Form const &form);
-		Form &operator=(Form const &from);
+		Form &operator=(Form const &aform);
 		~Form();
 
 		std::string const &getName() const;
