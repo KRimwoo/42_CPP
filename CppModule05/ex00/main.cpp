@@ -3,12 +3,14 @@
 int main()
 {
     try {
-        try {
-            Bureaucrat a("A", 200);
-        }
-        catch (const std::exception &e) {
-            std::cerr << e.what();
-        }
+        Bureaucrat a("A", 200);
+        std::cout << a;
+    }
+    catch (const std::exception &e) {
+        std::cerr << e.what();
+    }
+    
+    try {
         Bureaucrat b("B", 150);
         Bureaucrat c = b;
         Bureaucrat d;

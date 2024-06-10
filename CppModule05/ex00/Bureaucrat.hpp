@@ -21,7 +21,6 @@ class Bureaucrat
         void increaseGrade(void);
         void decreaseGrade(void);
 
-        // virtual 달아야 하나...
         class GradeTooHighException : public std::exception
         {
             public:
