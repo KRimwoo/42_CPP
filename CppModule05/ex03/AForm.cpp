@@ -2,21 +2,21 @@
 
 AForm::AForm() : _name("default"), _isSigned(false), _signGrade(150), _execGrade(150)
 {
-	std::cout << this->_name << ": default aForm constructor called.\n";
+	std::cout << this->_name << ": default AForm constructor called.\n";
 }
 
 AForm::AForm(std::string name, int signGrade, int execGrade): _name(name), _isSigned(false), _signGrade(signGrade), _execGrade(execGrade)
 {
 	if (signGrade < 1 || execGrade < 1)
-        throw GradeTooHighException();
-    else if (signGrade > 150 || execGrade > 150)
-        throw GradeTooLowException();
-	std::cout << this->_name << " : aForm constructor called.\n";
+		throw GradeTooHighException();
+	else if (signGrade > 150 || execGrade > 150)
+		throw GradeTooLowException();
+	std::cout << this->_name << " : AForm constructor called.\n";
 }
 
 AForm::AForm(AForm const &aForm) : _name(aForm.getName()), _isSigned(aForm.getIsSigned()), _signGrade(aForm.getSignGrade()), _execGrade(aForm.getExecGrade())
 {
-	std::cout << this->_name << " : aForm copy constructor called.\n";
+	std::cout << this->_name << " : AForm copy constructor called.\n";
 }
 
 AForm &AForm::operator=(AForm const &aForm)
@@ -24,13 +24,13 @@ AForm &AForm::operator=(AForm const &aForm)
 	if (this == &aForm)
 		return *this;
 	this->_isSigned = aForm.getIsSigned();
-	std::cout << this->_name << " : aForm assignation operator called.\n";
+	std::cout << this->_name << " : AForm assignation operator called.\n";
 	return *this;
 }
 
 AForm::~AForm()
 {
-	std::cout << this->_name << " : aForm destructor called.\n";
+	std::cout << this->_name << " : AForm destructor called.\n";
 }
 
 std::string const &AForm::getName() const
