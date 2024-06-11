@@ -44,9 +44,12 @@ int ScalarConverter::checkType(const std::string &input)
 
 	errno = 0;
 	strtod(input.c_str(), &endptr);
-	if (errno != ERANGE && *endptr == '\0')
-		return DOUBLE;
-
+	if (errno != ERANGE) {
+		if (std::strcmp(endptr, "f") == 0)
+			return FLOAT;
+		if (*endptr == '\0')
+			return DOUBLE;
+	}
 	return ARGUMENT_ERROR;
 }
 
@@ -108,14 +111,15 @@ void ScalarConverter::printInt(const std::string &input)
 
 void ScalarConverter::printFloat(const std::string &input)
 {
-	float f = std::strtod(input.c_str(), NULL);
-
+	float f = std::strtof(input.c_str(), NULL);
 	char c = static_cast<char>(f);
-	long l = static_cast<long>(f);
-	int i = static_cast<int>(f);
+	long l = std::strtol(input.c_str(), NULL, 10);
+	//int i = static_cast<int>(f); ????
+	int i = static_cast<int>(l);
 	double d = static_cast<double>(f);
 
-	if (input == "inff" || input == "+inff" || input == "-inf" || input == "nanf")
+	if (input == "inff" || input == "+inff" || input == "-inf" 
+		|| input == "nanf")
 	{
 		std::cout << "char: impossible" << std::endl;
 		std::cout << "int: impossible" << std::endl;
@@ -129,6 +133,7 @@ void ScalarConverter::printFloat(const std::string &input)
 			std::cout << "Non displayable" << std::endl;
 		else
 			std::cout << "'" << c << "'" << std::endl;
+
 		std::cout << "int: ";
 		if (l > 2147483647 || l < -2147483648)
 			std::cout << "impossible" << std::endl;
