@@ -5,6 +5,7 @@
 #include <cstdlib>
 #include <climits>
 #include <cstring>
+#include <cerrno>
 
 #define CHAR 1
 #define INT 2
