@@ -3,7 +3,6 @@
 
 #include <iostream>
 #include <cstdlib>
-#include <string>
 #include <climits>
 
 #define CHAR 1

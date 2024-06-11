@@ -39,7 +39,7 @@ int ScalarConverter::checkType(const std::string &input)
 
 	errno = 0;
 	strtof(input.c_str(), &endptr);
-	if (errno != ERANGE && strcmp(endptr, "f") == 0)
+	if (errno != ERANGE && std::strcmp(endptr, "f") == 0)
 		return FLOAT;
 
 	errno = 0;
