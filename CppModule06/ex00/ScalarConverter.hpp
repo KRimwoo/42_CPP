@@ -2,8 +2,8 @@
 #define SCALARCONVERTER_HPP
 
 #include <iostream>
-#include <limits.h>
 #include <cstdlib>
+#include <cerrno>
 
 #define CHAR 1
 #define INT 2

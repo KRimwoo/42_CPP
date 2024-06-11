@@ -1,6 +1,5 @@
 #include "ScalarConverter.hpp"
-#include <cerrno>
-#include <limits.h>
+
 
 ScalarConverter::ScalarConverter()
 {}
