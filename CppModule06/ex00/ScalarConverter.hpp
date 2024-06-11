@@ -12,6 +12,7 @@
 #define FLOAT 3
 #define DOUBLE 4
 
+
 #define ARGUMENT_ERROR 5
 
 class ScalarConverter
@@ -28,7 +29,7 @@ private:
 	static void printInt(const std::string &input);
 	static void printFloat(const std::string &input);
 	static void printDouble(const std::string &input);
-	static void printImpossible(const std::string &input);
+	static void printImpossible();
 public:
 	static void convert(const std::string &input);
 	

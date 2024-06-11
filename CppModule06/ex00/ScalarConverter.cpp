@@ -55,7 +55,6 @@ void ScalarConverter::convert(const std::string &input)
 {
 	int type = checkType(input);
 
-	std::cout << "type: " << type << std::endl;
 	switch (type)
 	{
 	case CHAR:
@@ -71,7 +70,7 @@ void ScalarConverter::convert(const std::string &input)
 		printDouble(input);
 		break;
 	case ARGUMENT_ERROR:
-		printImpossible(input);
+		printImpossible();
 		break;
 	default:
 		break;
@@ -131,4 +130,114 @@ void ScalarConverter::convert(const std::string &input)
 	//	}
 	//}	
 }
+
+void ScalarConverter::printChar(const std::string &input)
+{
+	char c = input[0];
+	if (c < 32 || c > 126)
+		std::cout << "char: Non displayable" << std::endl;
+	else
+		std::cout << "char: '" << c << "'" << std::endl;
+	
+	std::cout << "int: " << static_cast<int>(c) << std::endl;
+	std::cout << "float: " << static_cast<float>(c) << ".0f" << std::endl;
+	std::cout << "double: " << static_cast<double>(c) << ".0" << std::endl;
+}
+
+void ScalarConverter::printInt(const std::string &input)
+{
+	int i = std::stoi(input);
+
+	std::cout << "char: ";
+	if (i < 32 || i > 126)
+		std::cout << "Non displayable" << std::endl;
+	else
+		std::cout << "'" << static_cast<char>(i) << "'" << std::endl;
+	std::cout << "int: " << i << std::endl;
+	std::cout << "float: " << static_cast<float>(i) << ".0f" << std::endl;
+	std::cout << "double: " << static_cast<double>(i) << ".0" << std::endl;
+}
+
+void ScalarConverter::printFloat(const std::string &input)
+{
+	float f = std::strtod(input.c_str(), NULL);
+
+	char c = static_cast<char>(f);
+	long l = static_cast<long>(f);
+	int i = static_cast<int>(f);
+	double d = static_cast<double>(f);
+
+	if (input == "inff" || input == "+inff" || input == "-inf" || input == "nanf")
+	{
+		std::cout << "char: impossible" << std::endl;
+		std::cout << "int: impossible" << std::endl;
+	}
+	else
+	{
+		std::cout << "char: ";
+		if (c < 32 || c > 126)
+			std::cout << "Non displayable" << std::endl;
+		else
+			std::cout << "'" << c << "'" << std::endl;
+		std::cout << "int: ";
+		if (l > 2147483647 || l < -2147483648)
+			std::cout << "impossible" << std::endl;
+		else
+			std::cout << i << std::endl;
+	}
+	if (f - i == 0) {
+		std::cout << "float: " << f << ".0f" << std::endl;
+		std::cout << "double: " << d << ".0" << std::endl;
+	}
+	else {
+		std::cout << "float: " << f << "f" << std::endl;
+		std::cout << "double: " << d << std::endl;
+	}
+}
+
+void ScalarConverter::printDouble(const std::string &input)
+{
+	double d = std::strtod(input.c_str(), NULL);
+
+	char c = static_cast<char>(d);
+	long l = static_cast<long>(d);
+	int i = static_cast<int>(d);
+	float f = static_cast<float>(d);
+
+	if (input == "inf" || input == "+inf" || input == "-inf" || input == "nan")
+	{
+		std::cout << "char: impossible" << std::endl;
+		std::cout << "int: impossible" << std::endl;
+	}
+	else
+	{
+		std::cout << "char: ";
+		if (c < 32 || c > 126)
+			std::cout << "Non displayable" << std::endl;
+		else
+			std::cout << "'" << c << "'" << std::endl;
+		std::cout << "int: ";
+		if (l > 2147483647 || l < -2147483648)
+			std::cout << "impossible" << std::endl;
+		else
+			std::cout << i << std::endl;
+	}
+	if (d - i == 0) {
+		std::cout << "float: " << f << ".0f" << std::endl;
+		std::cout << "double: " << d << ".0" << std::endl;
+	}
+	else {
+		std::cout << "float: " << f << "f" << std::endl;
+		std::cout << "double: " << d << std::endl;
+	}
+}
+
+void ScalarConverter::printImpossible()
+{
+	std::cout << "char: impossible" << std::endl;
+	std::cout << "int: impossible" << std::endl;
+	std::cout << "float: impossible" << std::endl;
+	std::cout << "double: impossible" << std::endl;
+}
+
 
