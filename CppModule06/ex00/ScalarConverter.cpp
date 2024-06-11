@@ -94,7 +94,7 @@ void ScalarConverter::printChar(const std::string &input)
 
 void ScalarConverter::printInt(const std::string &input)
 {
-	int i = std::stoi(input);
+	int i = std::atoi(input.c_str());
 
 	std::cout << "char: ";
 	if (i < 32 || i > 126)
