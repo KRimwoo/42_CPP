@@ -3,7 +3,8 @@
 
 #include <iostream>
 #include <cstdlib>
-#include <cerrno>
+#include <string>
+#include <climits>
 
 #define CHAR 1
 #define INT 2
