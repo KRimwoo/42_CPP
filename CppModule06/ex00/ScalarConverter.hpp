@@ -29,7 +29,7 @@ private:
 	static void printInt(const std::string &input);
 	static void printFloat(const std::string &input);
 	static void printDouble(const std::string &input);
-	static void printImpossible();
+	static void printError();
 public:
 	static void convert(const std::string &input);
 	
