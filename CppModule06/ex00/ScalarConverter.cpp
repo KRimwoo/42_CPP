@@ -1,6 +1,5 @@
 #include "ScalarConverter.hpp"
 
-
 ScalarConverter::ScalarConverter()
 {}
 
@@ -57,8 +56,6 @@ int ScalarConverter::checkType(const std::string &input)
 void ScalarConverter::convert(const std::string &input)
 {
 	int type = checkType(input);
-
-	std::cout << "type: " << type << std::endl;
 
 	switch (type)
 	{

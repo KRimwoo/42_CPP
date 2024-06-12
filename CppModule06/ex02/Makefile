@@ -1,10 +1,10 @@
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = ScalarConverter.cpp main.cpp
+SRCS = Base.cpp A.cpp B.cpp C.cpp main.cpp
 OBJS = $(SRCS:.cpp=.o)
 
-NAME = convert
+NAME = identify
 
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
