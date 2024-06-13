@@ -2,7 +2,9 @@
 #include "A.hpp"
 #include "B.hpp"
 #include "C.hpp"
-
+#include <iostream>
+#include <ctime> // time
+#include <cstdlib> // srand, rand
 
 Base	*generate(void)
 {

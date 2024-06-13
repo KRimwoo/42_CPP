@@ -2,11 +2,12 @@
 #define SERIALIZER_HPP
 
 #include <iostream>
-#include <stdint.h>
+#include <cstdint> // uintptr_t
 
 struct Data
 {
 	std::string _data;
+	int _number;
 };
 
 class Serializer
