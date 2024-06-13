@@ -109,10 +109,9 @@ void ScalarConverter::printInt(const std::string &input)
 void ScalarConverter::printFloat(const std::string &input)
 {
 	float f = std::strtof(input.c_str(), NULL);
+
 	char c = static_cast<char>(f);
-	long l = std::strtol(input.c_str(), NULL, 10);
-	//int i = static_cast<int>(f); ????
-	int i = static_cast<int>(l);
+	int i = static_cast<int>(f);
 	double d = static_cast<double>(f);
 
 	if (input == "inff" || input == "+inff" || input == "-inf" 
@@ -124,7 +123,7 @@ void ScalarConverter::printFloat(const std::string &input)
 	else
 	{
 		std::cout << "char: ";
-		if (l > 2147483647 || l < -2147483648)
+		if (d > 2147483647 || d < -2147483648)
 			std::cout << "impossible" << std::endl;
 		else if (c < 32 || c > 126)
 			std::cout << "Non displayable" << std::endl;
@@ -132,7 +131,7 @@ void ScalarConverter::printFloat(const std::string &input)
 			std::cout << "'" << c << "'" << std::endl;
 
 		std::cout << "int: ";
-		if (l > 2147483647 || l < -2147483648)
+		if (d > 2147483647 || d < -2147483648)
 			std::cout << "impossible" << std::endl;
 		else
 			std::cout << i << std::endl;
@@ -152,7 +151,6 @@ void ScalarConverter::printDouble(const std::string &input)
 	double d = std::strtod(input.c_str(), NULL);
 
 	char c = static_cast<char>(d);
-	long l = static_cast<long>(d);
 	int i = static_cast<int>(d);
 	float f = static_cast<float>(d);
 
@@ -164,14 +162,14 @@ void ScalarConverter::printDouble(const std::string &input)
 	else
 	{
 		std::cout << "char: ";
-		if (l > 2147483647 || l < -2147483648)
+		if (d > 2147483647 || d < -2147483648)
 			std::cout << "impossible" << std::endl;
 		else if (c < 32 || c > 126)
 			std::cout << "Non displayable" << std::endl;
 		else
 			std::cout << "'" << c << "'" << std::endl;
 		std::cout << "int: ";
-		if (l > 2147483647 || l < -2147483648)
+		if (d > 2147483647 || d < -2147483648)
 			std::cout << "impossible" << std::endl;
 		else
 			std::cout << i << std::endl;

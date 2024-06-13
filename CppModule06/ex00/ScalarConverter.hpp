@@ -2,10 +2,9 @@
 #define SCALARCONVERTER_HPP
 
 #include <iostream>
-#include <cstdlib>
-#include <climits>
-#include <cstring>
-#include <cerrno>
+#include <cstdlib> // strtol, strtof, strtod
+#include <cstring> // strcmp
+#include <cerrno> // errno
 
 #define CHAR 1
 #define INT 2
