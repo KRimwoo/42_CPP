@@ -31,9 +31,9 @@ int ScalarConverter::checkType(const std::string &input)
 		return CHAR;
 
 	errno = 0;
-	long int li = strtol(input.c_str(), &endptr, 10);
+	long l = strtol(input.c_str(), &endptr, 10);
 
-	if (errno != ERANGE && li <= INT_MAX && li >= INT_MIN && *endptr == '\0')
+	if (errno != ERANGE && l <= 2147483647 && l >= -2147483648 && *endptr == '\0')
 		return INT;
 
 	errno = 0;
