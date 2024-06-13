@@ -1,7 +1,7 @@
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = Base.cpp A.cpp B.cpp C.cpp main.cpp
+SRCS = Base.cpp main.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 NAME = identify
