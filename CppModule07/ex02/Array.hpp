@@ -18,7 +18,9 @@ public:
         for (unsigned int i = 0; i < _size; i++)
             _array[i] = src._array[i];
     }
-    ~Array() { delete[] _array; }
+    ~Array() {
+        delete[] _array; 
+    }
 
     Array &operator=(Array const &src)
     {
