@@ -13,10 +13,9 @@ private:
 public:
     Array() : _array(NULL), _size(0) {}
     Array(unsigned int n) : _array(new T[n]()), _size(n) {}
-    Array(Array const &src) : _array(new T[src._size]()), _size(src._size)
+    Array(Array const &src) : _array(NULL)
     {
-        for (unsigned int i = 0; i < _size; i++)
-            _array[i] = src._array[i];
+        *this = src;
     }
     ~Array() {
         delete[] _array; 
@@ -27,8 +26,8 @@ public:
         if (this != &src)
         {
             delete[] _array;
-            _array = new T[src._size]();
-            _size = src._size;
+            _array = new T[src.size()]();
+            _size = src.size();
             for (unsigned int i = 0; i < _size; i++)
                 _array[i] = src._array[i];
         }
