@@ -52,5 +52,17 @@ int main()
     catch (std::exception &e) {
         std::cerr << e.what() << std::endl;
     }
+
+    try {
+        Array <float> floatArray(0);
+        for (unsigned int idx = 0; idx < floatArray.size(); idx++)
+            floatArray[idx] = idx + 0.1;
+
+        std::cout << "\nAccessing out of range" << std::endl;
+        std::cout << floatArray[10] << std::endl;
+    }
+    catch (std::exception &e) {
+        std::cerr << e.what() << std::endl;
+    }
     return 0;
 }
