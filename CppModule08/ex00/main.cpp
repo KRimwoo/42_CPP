@@ -4,7 +4,7 @@
 
 int main()
 {
-    std::cout << "Find int value in vector " << std::endl;
+    std::cout << "Find value in vector " << std::endl;
     std::vector<int> intVector;
     for (int i = 0; i < 10; i++)
         intVector.push_back(i);
@@ -20,16 +20,16 @@ int main()
         std::cerr << e.what() << std::endl;
     }
 
-    std::cout << "\nFind char value in list " << std::endl;
-    std::list<char> intList;
+    std::cout << "\nFind value in list " << std::endl;
+    std::list<int> intList;
     for (int i = 0; i < 10; i++)
-        intList.push_back('a' + i);
+        intList.push_back(i + 10);
     try {
-        std::list<char>::iterator iter = easyfind(intList, 'a');
+        std::list<int>::iterator iter = easyfind(intList, 12);
         std::cout << "Value found: " << *iter << std::endl;
-        iter = easyfind(intList, 'c');
+        iter = easyfind(intList, 14);
         std::cout << "Value found: " << *iter << std::endl;
-        iter = easyfind(intList, 'k');
+        iter = easyfind(intList, 3);
         std::cout << "Value found: " << *iter << std::endl;
     }
     catch (std::exception &e) {
