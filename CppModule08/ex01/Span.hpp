@@ -19,6 +19,7 @@ public:
     Span &operator=(Span const &src);
 
     void addNumber(int number);
+    
     template <typename InputIterator>
     void addNumber(InputIterator begin, InputIterator end)
     {
