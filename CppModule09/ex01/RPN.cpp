@@ -23,9 +23,9 @@ RPN::~RPN() {}
 void RPN::operate(char op) {
     if (_stack.size() < 2)
         throw Error();
-    int second = _stack.top();
+    long long second = static_cast<long long>(_stack.top());
     _stack.pop();
-    int first = _stack.top();
+    long long first = static_cast<long long>(_stack.top());
     _stack.pop();
     long long result;
     switch (op) {
