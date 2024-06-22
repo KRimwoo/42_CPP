@@ -107,10 +107,6 @@ void BitcoinExchange::exchange(std::string input) {
                     printError("bad input => " + data);
                     break ;
                 }
-                // if (std::atoi(data.substr(0, 4).c_str()) < 2009) {
-                //     printError("year too old");
-                //     break ;
-                // }
                 date = data;
             }
             else if (index == 1) {
