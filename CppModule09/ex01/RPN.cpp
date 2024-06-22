@@ -27,24 +27,28 @@ void RPN::operate(char op) {
     _stack.pop();
     int first = _stack.top();
     _stack.pop();
+    long long result;
     switch (op) {
         case '+':
-            _stack.push(first + second);
+            result = first + second;
             break;
         case '-':
-            _stack.push(first - second);
+            result = first - second;
             break;
         case '*':
-            _stack.push(first * second);
+            result = first * second;
             break;
         case '/':
             if (second == 0)
                 throw Error();
-            _stack.push(first / second);
+            result = first / second;
             break;
         default:
             throw Error();
     }
+    if (result > 2147483647 || result < -2147483648)
+        throw Error();
+    _stack.push(static_cast<int>(result));
 }
 
 void RPN::calculate() {
