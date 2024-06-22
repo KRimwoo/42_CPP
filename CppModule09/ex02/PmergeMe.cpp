@@ -28,16 +28,20 @@ void PmergeMe::init_arr(int argc, char **argv) {
         throw std::runtime_error("Error: not enough arguments");
     }
     for (int i = 1; i < argc; i++) {
+        if (argv[i][0] == '\0') {
+            throw std::runtime_error("Error: invalid argument");
+        }
         for (int j = 0; argv[i][j]; j++) {
             if (!isdigit(argv[i][j]) && argv[i][j] != '-') {
                 throw std::runtime_error("Error: invalid argument");
             }
         }
-        long long num_long = std::stoll(argv[i]);
-        if (num_long > 2147483647 || num_long < 0) {
+        char *endptr;
+        long num_long = std::strtol(argv[i], &endptr, 10);
+        if (num_long > 2147483647 || num_long < 0 || endptr[0] != '\0') {
             throw std::runtime_error("Error: invalid argument");
         }
-        int num = std::stoi(argv[i]);
+        int num = std::atoi(argv[i]);
         set.insert(num);
         _numbers.push_back(num);
         if (set.size() != _numbers.size()) {
@@ -54,6 +58,8 @@ void PmergeMe::init_vec() {
 }
 
 void PmergeMe::fordJohnson_vec(size_t pairSize) {
+    if (_n == 1)
+        return;
     size_t idx = 0;
     while ((idx + 1) * pairSize <= _n)
     {
@@ -209,6 +215,8 @@ void PmergeMe::init_deq() {
 }
 
 void PmergeMe::fordJohnson_deq(size_t pairSize) {
+    if (_n == 1)
+        return;
     size_t idx = 0;
     while ((idx + 1) * pairSize <= _n)
     {

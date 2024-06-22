@@ -24,7 +24,7 @@ int main(int argc, char **argv)
         deq_t = clock() - deq_t;
         std::cout << "After:  ";
         pmm.print_deq();
-        std::cout << "Time to process a range of " << argc - 1 << " element with std::deque : " << static_cast<float>(deq_t) * 1000000 / CLOCKS_PER_SEC << " us" << std::endl;
+        std::cout << "Time to process a range of " << argc - 1 << " element with std::deque  : " << static_cast<float>(deq_t) * 1000000 / CLOCKS_PER_SEC << " us" << std::endl;
     }
     catch (std::exception &e) {
         std::cerr << e.what() << std::endl;
