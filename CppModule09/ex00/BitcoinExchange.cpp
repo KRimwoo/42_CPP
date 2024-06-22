@@ -57,7 +57,7 @@ void BitcoinExchange::init(std::string data) {
     std::ifstream dataBase(data.c_str());
 
     if (!dataBase.is_open())
-        throw std::runtime_error("File not found");
+        throw std::runtime_error("Error: Data file not found");
     
     std::string line;
     std::getline(dataBase, line);
